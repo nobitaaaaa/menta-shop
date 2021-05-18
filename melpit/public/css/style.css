@@ -1,0 +1,59 @@
+.content{
+    flex: 1;
+    background-color: #eee;
+    margin: 50px auto;
+    padding: 10px;
+}
+
+
+.wrapper{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    text-align: center;
+}
+
+.product img
+{
+    width: 200px;
+    height: 200px;
+}  
+
+.product{
+    padding: 10px;
+}
+
+.name{
+    font-size: 22px;
+    float: left;
+}
+.description{
+    clear: left;
+}
+
+.description img{
+    float: left;
+    margin-right: 20px;
+}
+
+.description p{
+    font-size: 18px;
+}
+
+.description img
+{
+    width: 200px;
+    height: 200px;
+}
+
+span
+{
+    color: rgb(70, 68, 68);
+    border-bottom: 1px solid rgb(70, 68, 68);
+}
+
+.badge 
+{
+    color: crimson;
+    border: none;
+}

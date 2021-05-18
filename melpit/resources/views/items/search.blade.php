@@ -1,6 +1,6 @@
 @extends('layouts.apptwo')
+@section('title','検索結果一覧')
 
-@section('title','商品一覧')
 
 @section('header')
 <ul class="navbar-nav me-auto mb-2 mb-sm-0">
@@ -26,25 +26,26 @@
 </form>
 @endsection
 
-@section('content')
 
+
+@section('content')
 <div class="content">
-    <h1 style="text-align:center;font-size:30px;">商品一覧(test)</h1>
+    <h1 style="text-align:center;font-size:30px;">検索結果一覧</h1>
     <div class="wrapper">
-        @foreach ($items as $item )
+        @foreach ($results as $result )
         <div class="product">
-            <img src="{{asset('storage/image/'.$item->imgpash )}}" class="image_size" style="border:solid 1px rgb(0,0,0)">
-            <form action="itemDetail" method="get">
+            <img src="{{asset('storage/image/'.$result->imgpash )}}" alt="no-image" class="image_size">
+            <form action="itemDetail" method="post">
                 @csrf
-                <input type="hidden" name="itemId" value=" {{ $item->id }}">
-                <h2 class="item_name" style="font-size:20px;"><input type="submit" value="{{ $item->name }}"></h2>
+                <input type="hidden" name="itemId" value=" {{ $result->id }}">
+                <h2 class="item_name" style="font-size:20px;"><input type="submit" value="{{ $result->name }}"></h2>
             </form>
-            <h3 class="price" style="font-size: 18px;">¥{{ $item->price }}</h3>
+            <h3 class="price" style="font-size: 18px;">¥{{ $result->price }}</h3>
         </div>
         @endforeach
     </div>
 
 </div>
 
-{{$items->appends(request()->input())->links()}}
+
 @endsection
